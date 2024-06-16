@@ -453,27 +453,27 @@ private:
 
 
     /**
-     * @brief 冒泡法求取集合中值
+     * @brief 快速排序法求取集合中值
      *
      * @param vec 输入集合
      * @return int 中值
      */
-//    void quick_sort(std::vector<int>& q, int l, int r)
-//    {
-//        // 递归的终止条件
-//        if (l >= r) return;
-//        // 处理左右两端，使左端<=x，右端>=x
-//        int i = l - 1, j = r + 1, x = q[(l + r) >> 1];
-//        while (i < j)
-//        {
-//            do i++; while (q[i] < x);
-//            do j--; while (q[j] > x);
-//            if (i < j) std::swap(q[i], q[j]);
-//        }
-//        // 递归逐步排序
-//        quick_sort(q, l, j);
-//        quick_sort(q, j + 1, r);
-//    }
+    void quick_sort(std::vector<int>& q, int l, int r)
+    {
+        // 递归的终止条件
+        if (l >= r) return;
+        // 处理左右两端，使左端<=x，右端>=x
+        int i = l - 1, j = r + 1, x = q[(l + r) >> 1];
+        while (i < j)
+        {
+            do i++; while (q[i] < x);
+            do j--; while (q[j] > x);
+            if (i < j) std::swap(q[i], q[j]);
+        }
+        // 递归逐步排序
+        quick_sort(q, l, j);
+        quick_sort(q, j + 1, r);
+    }
 
     int getMiddleValue(vector<int> vec)
     {
@@ -482,24 +482,24 @@ private:
         if (vec.size() == 1)
             return vec[0];
 
-        int len = vec.size();
-        while (len > 0)
-        {
-            bool sort = true; // 是否进行排序操作标志
-            for (int i = 0; i < len - 1; ++i)
-            {
-                if (vec[i] > vec[i + 1])
-                {
-                    swap(vec[i], vec[i + 1]);
-                    sort = false;
-                }
-            }
-            if (sort) // 排序完成
-                break;
-
-            --len;
-        }
-//        quick_sort(vec, 0, vec.size() - 1); // 使用快速排序
+//        int len = vec.size();
+//        while (len > 0)
+//        {
+//            bool sort = true; // 是否进行排序操作标志
+//            for (int i = 0; i < len - 1; ++i)
+//            {
+//                if (vec[i] > vec[i + 1])
+//                {
+//                    swap(vec[i], vec[i + 1]);
+//                    sort = false;
+//                }
+//            }
+//            if (sort) // 排序完成
+//                break;
+//
+//            --len;
+//        }
+        quick_sort(vec, 0, vec.size() - 1); // 使用快速排序
 
         return vec[(int)vec.size() / 2];
     }
