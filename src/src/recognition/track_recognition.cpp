@@ -559,61 +559,48 @@ void TrackRecognition::trackRecognition(bool isResearch, uint16_t rowStart) {
         // 搜索色（block）块信息
         if (imageType == ImageType::Rgb) // 输入RGB图像
         {
-            if (imagePath.at<Vec3b>(row, 1)[2] > 0)
-            {
+            if (imagePath.at<Vec3b>(row, 1)[2] > 0) { // 检查第一个像素是否为色块
                 startBlock[counterBlock] = 0;
             }
-            for (int col = 1; col < COLSIMAGE; col++) // 搜索出每行的所有色块
-            {
+            for (int col = 1; col < COLSIMAGE; col++) {
                 if (imagePath.at<Vec3b>(row, col)[2] > 0 &&
-                    imagePath.at<Vec3b>(row, col - 1)[2] == 0)
-                {
+                    imagePath.at<Vec3b>(row, col - 1)[2] == 0) {
+                    // 记录色块起始位置
                     startBlock[counterBlock] = col;
-                }
-                else
-                {
-                    if (imagePath.at<Vec3b>(row, col)[2] == 0 &&
-                        imagePath.at<Vec3b>(row, col - 1)[2] > 0)
-                    {
-                        endBlock[counterBlock++] = col;
-                        if (counterBlock >= end(endBlock) - begin(endBlock))
-                            break;
-                    }
+                } else if (imagePath.at<Vec3b>(row, col)[2] == 0 &&
+                           imagePath.at<Vec3b>(row, col - 1)[2] > 0) {
+                    // 记录色块结束位置
+                    endBlock[counterBlock++] = col;
+                    if (counterBlock >= sizeof(endBlock) / sizeof(endBlock[0])) break; // 防止越界
                 }
             }
-            if (imagePath.at<Vec3b>(row, COLSIMAGE - 1)[2] > 0)
-            {
-                if (counterBlock < end(endBlock) - begin(endBlock) - 1)
+            if (imagePath.at<Vec3b>(row, COLSIMAGE - 1)[2] > 0) {
+                // 处理行尾的色块
+                if (counterBlock < sizeof(endBlock) / sizeof(endBlock[0]) - 1)
                     endBlock[counterBlock++] = COLSIMAGE - 1;
             }
         }
+
         if (imageType == ImageType::Binary) // 输入二值化图像
         {
-            if (imagePath.at<uchar>(row, 1) > 127)
-            {
+            if (imagePath.at<uchar>(row, 1) > 127) { // 检查第一个像素是否为色块
                 startBlock[counterBlock] = 0;
             }
-            for (int col = 1; col < COLSIMAGE; col++) // 搜索出每行的所有色块
-            {
+            for (int col = 1; col < COLSIMAGE; col++) {
                 if (imagePath.at<uchar>(row, col) > 127 &&
-                    imagePath.at<uchar>(row, col - 1) <= 127)
-                {
+                    imagePath.at<uchar>(row, col - 1) <= 127) {
+                    // 记录色块起始位置
                     startBlock[counterBlock] = col;
-                }
-                else
-                {
-                    if (imagePath.at<uchar>(row, col) <= 127 &&
-                        imagePath.at<uchar>(row, col - 1) > 127)
-                    {
-                        endBlock[counterBlock++] = col;
-                        if (counterBlock >= end(endBlock) - begin(endBlock))
-                            break;
-                    }
+                } else if (imagePath.at<uchar>(row, col) <= 127 &&
+                            imagePath.at<uchar>(row, col - 1) > 127) {
+                    // 记录色块结束位置
+                    endBlock[counterBlock++] = col;
+                    if (counterBlock >= sizeof(endBlock) / sizeof(endBlock[0])) break; // 防止越界
                 }
             }
-            if (imagePath.at<uchar>(row, COLSIMAGE - 1) > 127)
-            {
-                if (counterBlock < end(endBlock) - begin(endBlock) - 1)
+            if (imagePath.at<uchar>(row, COLSIMAGE - 1) > 127) {
+                // 处理行尾的色块
+                if (counterBlock < sizeof(endBlock) / sizeof(endBlock[0]) - 1)
                     endBlock[counterBlock++] = COLSIMAGE - 1;
             }
         }
