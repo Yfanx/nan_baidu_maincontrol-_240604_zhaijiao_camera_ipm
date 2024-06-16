@@ -1,0 +1,203 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "icar_pic.exe"
+		},
+		{
+			"path" : "icar_pic.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fdiagnostics-color=always"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/OpenCV-MinGW-Build-OpenCV-3.4.8-x64/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/OpenCV-MinGW-Build-OpenCV-3.4.8-x64/include/opencv"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "icar_pic::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_dnn348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_highgui348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_ml348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_objdetect348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_shape348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_stitching348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_superres348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_videostab348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_calib3d348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_features2d348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_flann348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_photo348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_video348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_videoio348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_imgcodecs348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_imgproc348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\OpenCV-MinGW-Build-OpenCV-3.4.8-x64\\x64\\mingw\\lib\\libopencv_core348.dll.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "icar_pic",
+	"nameOnDisk" : "icar_pic.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/icar_pic.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
