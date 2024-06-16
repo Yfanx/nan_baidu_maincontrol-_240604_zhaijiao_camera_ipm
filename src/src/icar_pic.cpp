@@ -29,7 +29,7 @@
 #include "recognition/cross_recognition.cpp"    //十字道路识别与路径规划类
 #include "recognition/ring_recognition.cpp"     //环岛道路识别与路径规划类
 #include "recognition/track_recognition.cpp"    //赛道识别基础类
-#include "recognition/parking.cpp"     //AI检测：停车区
+#include "recognition/parking.cpp"              //AI检测：停车区
 #include "detection/qiao.cpp"                   //桥的检测
 
 #include <opencv2/highgui.hpp> //OpenCV终端部署

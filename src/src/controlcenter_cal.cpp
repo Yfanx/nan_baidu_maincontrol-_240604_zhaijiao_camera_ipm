@@ -314,10 +314,7 @@ printf("\n\n -cccc--bool=%d",(averagepoint(track.pointsEdgeLeft)<10 &&track.poin
     if (track.pointsEdgeLeft.size()<4 && track.pointsEdgeRight.size()<4)
        ;
     else
- {   
-
-
-
+ {
         circle(centerImage, Point(track.pointsEdgeLeft[0].y, track.pointsEdgeLeft[0].x), 5, Scalar(0, 255, 0), 2); // 绿色点
         circle(centerImage, Point(track.pointsEdgeLeft[track.pointsEdgeLeft.size() / 3].y, track.pointsEdgeLeft[track.pointsEdgeLeft.size() / 3].x), 5, Scalar(0, 255, 0), 2); // 绿色点
         circle(centerImage, Point(track.pointsEdgeLeft[track.pointsEdgeLeft.size() * 2 / 3].y, track.pointsEdgeLeft[track.pointsEdgeLeft.size() * 2 / 3].x), 5, Scalar(0, 255, 0), 2); // 绿色点
